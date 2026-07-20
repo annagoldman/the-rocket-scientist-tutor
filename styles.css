@@ -1,0 +1,211 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Tokens ── */
+:root {
+  --grad-a: #5b7fe8;
+  --grad-b: #c044e8;
+  --accent: #d63ecb;
+  --text: #111111;
+  --text-soft: #444444;
+  --bg: #ffffff;
+  --bg-alt: #f5f3ff;
+  --border: #e2d9f3;
+  --radius: 14px;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(140deg, var(--grad-a) 0%, var(--grad-b) 100%);
+  padding: 5rem 1.5rem 6rem;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.25rem;
+  justify-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.tagline {
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
+  font-weight: 500;
+  color: #111;
+  max-width: 38ch;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.section p {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 58ch;
+}
+
+/* ── Subject cards ── */
+.subjects {
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.subject-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.subject-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.subject-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.subject-card p {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+/* ── List ── */
+.list {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.list li {
+  padding-left: 1.4rem;
+  position: relative;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── Contact section ── */
+.section-contact {
+  background: linear-gradient(140deg, var(--grad-a) 0%, var(--grad-b) 100%);
+}
+
+.contact-inner {
+  text-align: center;
+  justify-items: center;
+}
+
+.section-contact h2 {
+  color: #111;
+}
+
+.section-contact p {
+  color: #111;
+}
+
+.contact-note {
+  font-size: 0.9rem !important;
+  opacity: 0.75;
+  max-width: 44ch !important;
+}
+
+/* ── CTA button ── */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #111111;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  transition: opacity 0.15s;
+  margin-top: 0.25rem;
+}
+
+.cta-button:hover {
+  opacity: 0.8;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-soft);
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+  .subjects {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 3.5rem 1.25rem 4.5rem;
+  }
+}
